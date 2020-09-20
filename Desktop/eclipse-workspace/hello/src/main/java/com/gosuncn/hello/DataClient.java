@@ -23,7 +23,12 @@ import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import io.netty.util.CharsetUtil;
 
 /**
- * This class server as the client of the application and will 
+ * This class use netty to build server and client
+ * 
+ * This class server as the client of the application and will take the () data include 
+ * user choice and the gps location together and sent to the server to do recommendation
+ * 
+ * This is just an example to show how it works
  * 
  * @author Jinming
  *
@@ -45,8 +50,6 @@ public class DataClient {
 				
 				public void initChannel(SocketChannel ch) throws Exception { 
 					ch.pipeline().addLast(new DataClientHandler());
-					ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(1024, 2, 2, 2, 0));
-	
 				}
 			 });
 			
@@ -54,20 +57,20 @@ public class DataClient {
 			
 			ByteBuf buf = f.channel().alloc().buffer(200);
 			
-			//buf.writeBytes(ByteBufUtil.decodeHexDump("5555003d383630343736303432313231303632030007001b0200015f0d1c6b155180a621e7342a8500002c0340230260002300da4f08e8ffffffffaaaa"));
+			buf.writeBytes(ByteBufUtil.decodeHexDump("55AABBCC18BC614E21C1F9aaaaaaaaaa"));
 			
-			
+			/*
 			System.out.println("Please enter keys: ");
 			Scanner sc = new Scanner(System.in);
 			String str = sc.nextLine();
 			
 			
-			buf.writeBytes(ByteBufUtil.decodeHexDump(str));
+			buf.writeBytes(ByteBufUtil.decodeHexDump(str));*/
 				
 			f.channel().writeAndFlush(buf);
 			
 			f.channel().closeFuture().sync();
-			sc.close();
+			//sc.close();
 		} finally {
 			group.shutdownGracefully();
 			
