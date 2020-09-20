@@ -1,0 +1,10 @@
+.MainLayout {
+  margin: 0.8rem auto;
+  height: 86vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+}
