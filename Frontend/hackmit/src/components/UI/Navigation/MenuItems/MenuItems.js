@@ -49,7 +49,7 @@ const MenuItems = (props) => {
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>
-            <ListItemText>Colleges</ListItemText>
+            <ListItemText>大众点评</ListItemText>
           </ListItem>
         </Link>
         {props.isAuth && (
