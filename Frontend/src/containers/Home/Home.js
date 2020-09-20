@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = (props) => {
-  return <div>HackMit</div>;
+  return <div>Public Review</div>;
 };
 
 export default Home;

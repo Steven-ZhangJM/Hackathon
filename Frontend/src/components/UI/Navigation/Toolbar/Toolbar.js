@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const titles = [
-  "大众点评",
+  "Public Review",
   "MyProfile",
   "Login/Signup",
   "Logout",
