@@ -1,0 +1,8 @@
+.App {
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(187, 247, 255);
+  overflow: auto;
+  text-align: center;
+  scroll-behavior: smooth;
+}
